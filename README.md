@@ -94,7 +94,7 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to the updated VM to check that the installation worked as expected.
 
 - Playbooks:
-   - ![Elk Playbook](yml/pentest.yml)
+   - ![Elk Playbook](yml/install-elk.yml)
    - ![Filebeat Playbook](yml/filebeat-playbook.yml)
    - ![Metricbeat Playbook](yml/metricbeat-playbook.yml)
 - In order to have Ansible run on a specific machine, you need to change /etc/ansible/hosts. You have to change the network IPs under the section that the ansible updates (Comment out the IPs not needed for the update). In order to specify which machine you want to install the ELK server on and Filebeat on, you go into the Playbook for either or, and make sure that the 'hosts: ' line in your playbook file matches the hosts you had specified in /etc/ansible/hosts.
