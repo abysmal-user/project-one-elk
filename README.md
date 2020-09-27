@@ -43,7 +43,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the whitelisted machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- 172.58.27.37
 
 Machines within the network can only be accessed by Jump-Box-Provisioner.
 - Jump-Box-Provisioner is the only VM that has access to the Elk VM. It's public IP is 13.72.73.154, while the network IP is listed above.
@@ -52,9 +52,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 172.58.27.37         |
+| Web-1    | No                  | 10.1.0.4             |
+| Web-2    | No                  | 10.1.0.4             |
+| Web-3    | No                  | 10.1.0.4             |
+| ELK      | No                  | 10.1.0.4             |
 
 ### Elk Configuration
 
