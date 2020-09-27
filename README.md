@@ -25,7 +25,7 @@ Load balancing ensures that the application will be highly _____, in addition to
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_ Filebeat watches for 
+- Filebeat watches log files that you specify and collects log events
 - Metricbeat will record System CPU usage, memory, file system, disk operations, and network usage statistics.
 
 The configuration details of each machine may be found below.
@@ -74,7 +74,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1: 10.1.0.5
+- Web-2: 10.1.0.6
+- Web-3: 10.1.0.7
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
