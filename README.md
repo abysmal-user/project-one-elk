@@ -25,8 +25,8 @@ Load balancing ensures that the application will be highly available, in additio
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_ Load Balancers protect 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the VMs on the network and system system metrics.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- Filebeat watches for changes in the file system.
+- Metricbeat records system metrics like CPU usage, disk usage, etc.
 
 The configuration details of each machine may be found below.
 
