@@ -22,7 +22,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_ Load Balancers protect 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the VMs on the network and system system metrics.
 - _TODO: What does Filebeat watch for?_
@@ -93,7 +93,7 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the network IPs you want to update.
 - Run the playbook, and navigate to the updated VM to check that the installation worked as expected.
 
-- _Which file is the playbook? You can copy the playbooks from Git.
+- ![Elk Playbook](yml/pentest.yml)
 - In order to have Ansible run on a specific machine, you need to change /etc/ansible/hosts. You have to change the network IPs under the section that the ansible updates (Comment out the IPs not needed for the update). In order to specify which machine you want to install the ELK server on and Filebeat on, you go into the Playbook for either or, and make sure that the 'hosts: ' line in your playbook file matches the hosts you had specified in /etc/ansible/hosts.
 - The URL used to check if the ELK server is running is http://52.175.210.76:5601/app/kibana
 
