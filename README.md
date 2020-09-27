@@ -99,5 +99,3 @@ SSH into the control node and follow the steps below:
    - ![Metricbeat Playbook](yml/metricbeat-playbook.yml)
 - In order to have Ansible run on a specific machine, you need to change /etc/ansible/hosts. You have to change the network IPs under the section that the ansible updates (Comment out the IPs not needed for the update). In order to specify which machine you want to install the ELK server on and Filebeat on, you go into the Playbook for either or, and make sure that the 'hosts: ' line in your playbook file matches the hosts you had specified in /etc/ansible/hosts.
 - The URL used to check if the ELK server is running is http://52.175.210.76:5601/app/kibana
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
