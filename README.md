@@ -25,8 +25,8 @@ Load balancing ensures that the application will be highly available, in additio
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the VMs on the network and system system metrics.
-- Filebeat watches log files that you specify and collects log events
-- Metricbeat will record System CPU usage, memory, file system, disk operations, and network usage statistics.
+- _TODO: What does Filebeat watch for?_
+- _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
 
@@ -42,7 +42,7 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the whitelisted machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - 172.58.27.37
 
 Machines within the network can only be accessed by Jump-Box-Provisioner.
@@ -66,7 +66,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
-- ...
+- Check to see if it's running properly by SSH-ing into the ELK VM and running the command 'docker ps'
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -83,19 +83,18 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat checks for any changes made to the file system. Metricbeat on the other hand checks for changes in system metrics.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to the Ansible Control Node.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Update the hosts file to include the network IPs you want to update.
+- Run the playbook, and navigate to the updated VM to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- _Which file is the playbook? You can copy the playbooks from Git.
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ In order to have Ansible run on a specific machine, you need to change /etc/ansible/hosts. All you have to do is change the network IPs under the section that the ansible updates (Comment out the IPs not needed for the update).
 - The URL used to check if the ELK server was running was http://52.175.210.76:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
