@@ -1,0 +1,24 @@
+---
+  - name: Install metric beat
+    hosts: webservers
+    become: true
+    tasks:
+    - name: Download metricbeat
+      command: curl -L -O
+
+    - name: install metricbeat
+      command: dpkg -i
+
+    - name: drop in metricbeat config
+      copy:
+        src: /etc/ansible/files/metricbeat-config.yml
+        dest: 
+
+    - name: enable and configure docker module for metric beat
+      command: 
+
+    - name: setup metric beat
+      command: 
+
+    - name: start metric beat
+      command: 
